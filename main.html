@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Besar Expense Tracker</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light bg-primary d-flex justify-content-around align-items-center mb-3">
+    <div>
+      <h1 class="logo text-white fw-bold">Besar Expense Tracker</h1>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-around align-items-center add-transaction mb-3">
+      <div class="col-6 d-flex justify-content-center">
+        <h2 class="fw-bold text-center text-primary">Add New Transaction</h2>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <button class="btn btn-primary print me-2" data-toggle="tooltip" data-placement="top"
+          title="Print">Print</button>
+        <button class="btn btn-success download-csv" data-toggle="tooltip" data-placement="top"
+          title="Download Excel">Download</button>
+      </div>
+    </div>
+    <div class="row d-flex notification">
+    </div>
+    <div class="row d-flex justify-content-start add-transaction">
+      <div class="col-3">
+        <input type="text" class="form-control transaction-name" placeholder="Transaction Name" required />
+      </div>
+      <div class="col-2">
+        <input type="text" class="form-control transaction-amount" placeholder="Amount" required />
+      </div>
+      <div class="col-3">
+        <select id="category" name="category" class="form-select transaction-category" required>
+          <option selected>Choose...</option>
+          <option value="Income">Income</option>
+          <option value="Housing">Housing</option>
+          <option value="Food">Food</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Debts">Debts</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <input type="date" class="form-control transaction-date" required>
+      </div>
+      <div class="col-1 d-flex justify-content-center">
+        <button type="button" class="btn btn-primary text-center add">
+          Add
+        </button>
+      </div>
+    </div>
+    <hr class="text-primary" />
+    <div class="row mb-4">
+      <h2 class="fw-bold text-center text-primary">Transaction History</h2>
+    </div>
+    <div class="row d-flex justify-content-start">
+      <div class="col-3 d-flex justify-content-center">
+        <p class="fw-bold text-primary">Transaction Name</p>
+      </div>
+      <div class="col-2 d-flex justify-content-center">
+        <p class="fw-bold text-primary">Amount</p>
+      </div>
+      <div class="col-3 d-flex justify-content-center">
+        <p class="fw-bold text-primary">Category</p>
+      </div>
+      <div class="col-2 d-flex justify-content-center pe-0">
+        <p class="fw-bold text-primary">Date</p>
+      </div>
+      <div class="col-sm-2 d-flex align-items-center search px-0 pb-2">
+        <input type="text" class="form-control search-bar me-2" placeholder="Search">
+        <i class='bx bx-search text-primary'></i>
+      </div>
+    </div>
+    <hr class="text-primary mt-0" />
+    <div class="transactions"></div>
+    <div class="row mb-3">
+      <h2 class="text-primary text-center fw-bold text-decoration-underline">
+        Charts
+      </h2>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center mb-5">
+      <div class="col">
+        <h3 class="text-center text-primary fw-bold">Finances Chart:</h3>
+      </div>
+      <div class="col">
+        <canvas id="financeChart"></canvas>
+      </div>
+    </div>
+    <hr class="text-primary" />
+    <div class="row d-flex justify-content-center align-items-center mb-5">
+      <div class="col">
+        <h3 class="text-center text-primary fw-bold">Categories Chart:</h3>
+      </div>
+      <div class="col">
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer bg-primary">
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="finances me-4">
+        <p>Income:</p>
+        <span class="income"></span>
+      </div>
+      <div class="finances me-4">
+        <p>Expenses:</p>
+        <span class="expenses"></span>
+      </div>
+      <div class="finances">
+        <p>Balance:</p>
+        <span class="balance"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/charts.js"></script>
+</body>
+
+</html>

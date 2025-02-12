@@ -1,0 +1,36 @@
+body {
+    padding-bottom: 70px;
+}
+
+.footer {
+    padding-top: 14px;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.finances {
+    color: white;
+    font-weight: bold;
+    line-height: 6px;
+    text-align: center;
+}
+
+.balance,
+.expenses,
+.income {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.search,
+.add-transaction {
+    position: relative;
+}
+
+.bx-search {
+    position: absolute;
+    right: 24px;
+    font-size: 20px;
+}
